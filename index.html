@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JS Pokedex</title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="header-content">
+      <h1 class="title">The PokeDex</h1>
+      <p class="tagline">
+        A very simple website to use the
+        <a href="https://pokeapi.co/" class="pokedex-link">POKEAPI</a>. Look for
+        your favorite Pokemon!
+      </p>
+
+      <!-- Search bar -->
+      <!-- <div class="searchbar">
+        <input
+          type="text"
+          name="search"
+          id="search"
+          placeholder="Find a Pokemon!"
+        />
+        <i class="fa fa-search"></i>
+      </div> -->
+    </div>
+
+    <!-- Tile Container -->
+    <div class="tile-container" id="tileContainer"></div>
+
+    <!-- Modal pop up for pokemon information -->
+    <div class="modal hideType" id="modalContainer">
+      <!-- Close Button -->
+      <p class="close" title="Close" onclick="closeModal()">X</p>
+      <!-- Pokemon Name & Number-->
+      <div class="name-number">
+        <span class="name" id="pokeName"></span>
+        <span class="number" id="pokeNum"></span>
+      </div>
+      <!-- Container for Regular and Shiny Sprites -->
+      <div class="image-container">
+        <div class="regular-sprite">
+          <img alt="Regular Sprite" id="regSprite" />
+        </div>
+        <div class="shiny-sprite">
+          <img alt="Shiny Sprite" id="shinySprite" />
+        </div>
+      </div>
+      <!-- Container for Pokemon Types -->
+      <div class="types">
+        <div class="type1" id="type1"></div>
+        <div class="type2" id="type2"></div>
+      </div>
+      <!-- Pokemon Description -->
+      <span class="flavor" id="flavorText"></span>
+    </div>
+    <script src="app.js"></script>
+  </body>
+</html>

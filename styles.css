@@ -1,0 +1,367 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;300;400;700&display=swap');
+
+:root {
+  /* Pokedex Color */
+  --pokedex-red: #ee1515;
+  --pokedex-black: #222224;
+  --pokedex-white: #f0f0f0;
+  /* Border Radius */
+  --radius: 5px;
+  /* padding for search bar */
+  --search-padding: 20px;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-size: 16px;
+  font-family: 'Montserrat', sans-serif;
+  color: var(--pokedex-black);
+}
+
+body {
+  height: 100vh;
+  width: 100vw;
+  color: white;
+  position: relative;
+  overflow: hidden;
+  overflow-y: scroll;
+}
+
+/* Main Page Styles */
+.header-content {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 500;
+  background: white;
+  padding: 15px 0;
+}
+
+.title {
+  color: var(--pokedex-red);
+  font-size: 50px;
+  text-align: center;
+  font-style: italic;
+}
+
+.tagline {
+  color: #333;
+  text-align: center;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.pokedex-link {
+  text-decoration: none;
+  color: var(--pokedex-red);
+}
+
+.pokedex-link:hover {
+  border-bottom: solid 2px var(--pokedex-red);
+}
+
+.searchbar {
+  position: relative;
+}
+
+.searchbar i {
+  color: var(--pokedex-black);
+  position: absolute;
+  right: var(--search-padding);
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 20px;
+  cursor: pointer;
+}
+
+input {
+  outline: none;
+  border: none;
+  background: var(--pokedex-white);
+  border-top: solid 10px var(--pokedex-red);
+  border-bottom: solid 10px var(--pokedex-black);
+  background: var(--pokedex-white);
+  color: white;
+  height: 50px;
+  width: 100%;
+  padding: 0 var(--search-padding);
+  margin: 10px 0;
+}
+input::placeholder {
+  color: var(--pokedex-black);
+}
+/* End Main Page Styles */
+
+/* New Modal Styles */
+.modal {
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 400px;
+  height: 500px;
+  border: solid 5px var(--pokedex-red);
+  border-radius: var(--radius);
+  z-index: 5000;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+  padding: 15px;
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-start;
+  flex-direction: column;
+  background: white;
+}
+
+.close {
+  font-weight: bold;
+  width: 100%;
+  text-align: right;
+  cursor: pointer;
+  font-size: 30px;
+}
+
+.name-number {
+  text-align: center;
+  width: 100%;
+}
+.name-number .name {
+  font-size: 40px;
+  text-transform: capitalize;
+}
+.name-number .number {
+  font-size: 25px;
+}
+
+.image-container {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.image-container div {
+  height: auto;
+  width: 200px;
+}
+
+.image-container div img {
+  width: 100%;
+}
+
+.types {
+  display: flex;
+  justify-content: space-around;
+  align-self: center;
+  width: 75%;
+}
+
+.types div {
+  height: 30px;
+  width: 125px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: var(--radius);
+  text-transform: capitalize;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.flavor {
+  width: 100%;
+}
+/* End New Modal Styles */
+
+/* Pokemon Tiles */
+.tile-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  width: 95%;
+  min-height: 100vh;
+  margin: 10px auto;
+  padding-top: 175px;
+}
+
+.tile {
+  background: var(--pokedex-white);
+  border-radius: var(--radius);
+  margin: 10px 5px;
+  text-align: center;
+  padding: 10px;
+  font-weight: bold;
+  width: 200px;
+  height: 200px;
+  position: relative;
+  cursor: pointer;
+  box-shadow: 0 5px 5px rgba(0, 0, 0, 0.3);
+}
+
+.tile:hover {
+  box-shadow: 0 2px 2px rgba(0, 0, 0, 0.3);
+}
+
+.tile img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 75%;
+  height: auto;
+}
+
+.tile p {
+  text-transform: capitalize;
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+/* Type Background Colors */
+.normal {
+  background: radial-gradient(
+    circle,
+    rgba(255, 255, 255, 1) 0%,
+    rgba(168, 167, 122, 1) 100%
+  );
+}
+.water {
+  background: radial-gradient(
+    circle,
+    rgba(255, 255, 255, 1) 0%,
+    rgba(99, 144, 240, 1) 100%
+  );
+}
+.fire {
+  background: radial-gradient(
+    circle,
+    rgba(255, 255, 255, 1) 0%,
+    rgba(238, 129, 48, 1) 100%
+  );
+}
+.electric {
+  background: radial-gradient(
+    circle,
+    rgba(255, 255, 255, 1) 0%,
+    rgba(247, 208, 44, 1) 100%
+  );
+}
+.grass {
+  background: radial-gradient(
+    circle,
+    rgba(255, 255, 255, 1) 0%,
+    rgba(122, 199, 76, 1) 100%
+  );
+}
+.ice {
+  background: radial-gradient(
+    circle,
+    rgba(255, 255, 255, 1) 0%,
+    rgba(150, 217, 214, 1) 100%
+  );
+}
+.fighting {
+  background: radial-gradient(
+    circle,
+    rgba(255, 255, 255, 1) 0%,
+    rgba(194, 46, 40, 1) 100%
+  );
+}
+.poison {
+  background: radial-gradient(
+    circle,
+    rgba(255, 255, 255, 1) 0%,
+    rgba(163, 62, 161, 1) 100%
+  );
+}
+.ground {
+  background: radial-gradient(
+    circle,
+    rgba(255, 255, 255, 1) 0%,
+    rgba(226, 191, 101, 1) 100%
+  );
+}
+.flying {
+  background: radial-gradient(
+    circle,
+    rgba(255, 255, 255, 1) 0%,
+    rgba(169, 143, 243, 1) 100%
+  );
+}
+.psychic {
+  background: radial-gradient(
+    circle,
+    rgba(255, 255, 255, 1) 0%,
+    rgba(249, 85, 135, 1) 100%
+  );
+}
+.bug {
+  background: radial-gradient(
+    circle,
+    rgba(255, 255, 255, 1) 0%,
+    rgba(166, 185, 26, 1) 100%
+  );
+}
+.rock {
+  background: radial-gradient(
+    circle,
+    rgba(255, 255, 255, 1) 0%,
+    rgba(182, 161, 54, 1) 100%
+  );
+}
+.ghost {
+  background: radial-gradient(
+    circle,
+    rgba(255, 255, 255, 1) 0%,
+    rgba(115, 87, 151, 1) 100%
+  );
+}
+.dragon {
+  background: radial-gradient(
+    circle,
+    rgba(255, 255, 255, 1) 0%,
+    rgba(111, 53, 252, 1) 100%
+  );
+}
+.dark {
+  background: radial-gradient(
+    circle,
+    rgba(255, 255, 255, 1) 0%,
+    rgba(112, 87, 70, 1) 100%
+  );
+}
+.steel {
+  background: radial-gradient(
+    circle,
+    rgba(255, 255, 255, 1) 0%,
+    rgba(183, 183, 206, 1) 100%
+  );
+}
+.fairy {
+  background: radial-gradient(
+    circle,
+    rgba(255, 255, 255, 1) 0%,
+    rgba(214, 133, 173, 1) 100%
+  );
+}
+/* End type background colors */
+
+.hideType {
+  display: none !important;
+}
+
+/* Media Queries */
+
+@media (max-width: 600px) {
+  .modal {
+    width: 95%;
+  }
+  .types {
+    width: 90%;
+  }
+}
